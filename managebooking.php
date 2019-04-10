@@ -1,5 +1,8 @@
-<?php include("header.php"); include("../includes/dbh.inc.php"); ?>
+<?php 
+	
+include("header2.php"); include("includes/dbh.inc.php"); ?>
 <div class='blue-container'>
+	
 	<div class="container">
 		<h3>Manage Booking </h3>
 	</div>
@@ -31,23 +34,19 @@
 
 		</tr>
 		<?php
-			$i=1;
-			$sql="select * from booking";
+			$id=$_GET['user_id'];
+			$sql="select * from booking where user_id='$id'";
 			$res=mysqli_query($conn,$sql);
 			while($rec=mysqli_fetch_array($res)){
 				echo "<tr>";
-				echo "<td align='center'> $i.</td>";
 				echo "<td> {$rec['first']} </td>";
 				echo "<td> {$rec['email']} </td>";
 				echo "<td> {$rec['injury']} </td>";
 				echo "<td> {$rec['massage']} </td>";
 				echo "<td> {$rec['timeslot']} </td>";
 			
-			echo "<td align='center'> <a class='btn' href='newbooking.php?id={$rec['id']}'>Edit</a>  | <a class='btn' href='deletebooking.php?id={$rec['id']}'>Delete</a> </td>";
-				/* Give each button a id so that we can use it to do other tasks. */
-		// echo "<td align='center'> <a class='btn' href='viewbookings.php?id={$rec['bid']}'>Open</a> |<a class='btn' href='newbooking.php?id={$rec['bid']}'>Edit</a> | <a class='btn' href='deletebooking.php?id={$rec['bid']}'>Delete</a> </td>";
-				echo"</tr>";
-				$i++;
+			echo"</tr>";
+				
 			}
 		?>
 	</table>
