@@ -1,5 +1,5 @@
 <?php 
- include_once 'header2.php';
+  include_once 'header2.php';
 ?>
 
 
@@ -19,14 +19,14 @@
                             <h2 class="mb-0">Login</h2>
                         </div>
                         <div class="card-body"> 
-                            <form class="form" action="login.php" method="POST">
+                            <form class="form" action="includes/login.inc.php" method="POST">
                                 <div class="form-group">
                                     <label for="uid">Username/Email Address</label>
-                                    <input type="text" class="form-control form-control-lg rounded-0" name="uname" required>
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="uid" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="pwd">Password</label>
-                                    <input type="password" class="form-control form-control-lg rounded-0" name="upwd" required>
+                                    <input type="password" class="form-control form-control-lg rounded-0" name="pwd" required>
                                 </div>
                                 <button type="submit" class="btn btn-success btn-lg float-right" name="submit">Login</button>
                             </form>
@@ -37,3 +37,8 @@
    
   </div>
 </section>
+
+<?php 
+  include_once 'footer.php';
+?>
+  
