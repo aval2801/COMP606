@@ -1,5 +1,5 @@
-<?php include("header.php"); 
-	include("../includes/dbh.inc.php");
+<?php include("header2.php"); 
+	include("includes/dbh.inc.php");
 ?>
 
  
@@ -12,7 +12,6 @@
  	*/
 	 if(isset($_GET['id'])) {
 		 $id=$_GET['id'];
-		 $sql="select * from booking where id='$id'";
 		 $res=mysqli_query($conn,$sql);
 		 $rec=mysqli_fetch_array($res);
 		
@@ -25,13 +24,13 @@
 		 $formaction="editbooking.php";
 		 $pageheading="Edit Booking";
 		 $btn="Save Changes";
-		 $hidden="<input type='hidden' name='id' value='{$id}'>";
+		 $hidden="<input type='hidden' name='id' value='{$user_id}'>";
  			 } else {
 		$rec=array('id'=>'','first'=>'','email'=>'','injury'=>'','massage'=>'','timeslot'=>'');
 		//$cphoto="";
 		$pageheading="Create New Booking";
 		$formaction="savebookings.php";
-		$btn="Book Now";
+		$btn="Cancel Booking";
 		$hidden="";
 	 }
 ?>
